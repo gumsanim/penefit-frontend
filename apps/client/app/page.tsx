@@ -1,7 +1,5 @@
 import React from "react";
-import { Button } from "@repo/components";
-import { Input } from "@repo/components";
-import type { ButtonProps } from "@repo/components";
+import { Button, Input } from "@repo/components";
 
 export default function Home() {
   return (

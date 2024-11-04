@@ -15,7 +15,7 @@
     }
   },
   "scripts": {
-    "build": "pnpx webpack-cli --config webpack.config.ts && tsc"
+    "build": "tsc && pnpx webpack-cli --config webpack.config.ts"
   },
   "keywords": [],
   "author": "penefit",

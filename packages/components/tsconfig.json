@@ -1,31 +1,55 @@
 {
+  // Extends a shared TypeScript configuration from another file,
+  // useful in monorepos to maintain consistent settings across projects.
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
+    // Sets the base directory for module resolution to "src", simplifying import paths.
     "baseUrl": "./src",
+    // Custom module paths to allow imports like `@button` instead of relative paths.
     "paths": {
       "@button": ["button"],
       "@input": ["input"]
     },
-    "module": "ESNext", // Set module format to ESNext for ESM
+    // Sets module format to ESNext, targeting modern environments with ES module support.
+    "module": "ESNext",
+    // Uses Node.js-style resolution, compatible with bundlers like Webpack.
     "moduleResolution": "Node",
+    // Specifies ESNext as the output target, allowing the latest JS features in the output.
     "target": "ESNext",
+    // Enables strict type checking, enforcing best practices and improving type safety.
     "strict": true,
+    // Only outputs declaration files (.d.ts), omitting JavaScript.
+    // Ideal for libraries focused on providing types.
     "emitDeclarationOnly": true,
+    // Sets the JSX factory to "react-jsx" for compatibility with React 17+.
     "jsx": "react-jsx",
-    "outDir": "dist/types", // where artifact should all be located aftertsc build
+    // Output directory for declaration files after build.
+    "outDir": "dist/types",
+    // Skips type checking for libraries in node_modules for faster builds.
     "skipLibCheck": true
   },
+  // Settings for `ts-node`, used to run TypeScript directly in Node.js environments.
   "ts-node": {
     "compilerOptions": {
+      // Compiles modules to CommonJS, which Node.js uses natively.
       "module": "CommonJS"
     }
   },
   "include": [
+    // Includes all files in the "src" directory.
     "src/**/*",
+    // Top-level TypeScript files in the project root.
     "*.ts",
     "*.tsx",
+    // Include the Webpack configuration if written in TypeScript.
     "webpack.config.ts",
+    // Includes the Babel config, in case it's needed for TypeScript tooling.
     "babel.config.js"
   ],
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    // Excludes external dependencies to avoid unnecessary processing.
+    "node_modules",
+    // Excludes the output directory to prevent circular processing of built files.
+    "dist"
+  ]
 }
