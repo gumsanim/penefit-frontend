@@ -1,3 +1,31 @@
 {
-    "extends": "@repo/typescript-config/react-library.json",
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@button": ["button"],
+      "@input": ["input"]
+    },
+    "module": "ESNext", // Set module format to ESNext for ESM
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "strict": true,
+    "emitDeclarationOnly": true,
+    "jsx": "react-jsx",
+    "outDir": "dist/types", // where artifact should all be located aftertsc build
+    "skipLibCheck": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [
+    "src/**/*",
+    "*.ts",
+    "*.tsx",
+    "webpack.config.ts",
+    "babel.config.js"
+  ],
+  "exclude": ["node_modules", "dist"]
 }
