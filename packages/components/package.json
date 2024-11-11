@@ -1,7 +1,7 @@
 {
   "name": "@repo/components",
   "version": "1.0.0",
-  "description": "components repo",
+  "description": "penefit-frontend components",
   "exports": {
     ".": {
       "require": {

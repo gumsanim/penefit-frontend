@@ -9,6 +9,7 @@ const resolver = (_path: string) => path.resolve(__dirname, _path);
 const webpackConfig: Configuration[] = [
   {
     name: "commonjs",
+    mode: "development",
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"],
       alias: {
@@ -39,6 +40,7 @@ const webpackConfig: Configuration[] = [
   },
   {
     name: "esm",
+    mode: "development",
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"],
       alias: {

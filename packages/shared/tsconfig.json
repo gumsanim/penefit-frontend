@@ -1,0 +1,32 @@
+{
+  "extends": "@repo/typescript-config/react-library.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "noEmit": false,
+    // Sets module format to ESNext, targeting modern environments with ES module support.
+    "module": "ESNext",
+    // Uses Node.js-style resolution, compatible with bundlers like Webpack.
+    "moduleResolution": "Node",
+    // Specifies ESNext as the output target, allowing the latest JS features in the output.
+    "target": "ESNext",
+    // Enables strict type checking, enforcing best practices and improving type safety.
+    "strict": true,
+    // Sets the JSX factory to "react-jsx" for compatibility with React 17+.
+    "jsx": "react-jsx",
+    // Output directory for declaration files after build.
+    "outDir": "dist",
+    // Skips type checking for libraries in node_modules for faster builds.
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@hooks": ["hooks"],
+      "@utils": ["utils"],
+      "@constants": ["constants"]
+    },
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*", "*.ts", "*.tsx", "*.js", "*.jsx", "rollup.config.js"],
+  "exclude": ["node_modules", "dist"]
+}
