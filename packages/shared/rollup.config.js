@@ -26,11 +26,15 @@ const rollupConfig = {
     {
       file: packageJson.exports["."].import.default,
       format: "es",
+
       sourcemap: true,
     },
   ],
   plugins: [
-    nodeResolve(), // This plugin allows Rollup to resolve external dependencies, specifically those in node_modules, so that it can bundle them properly.
+    nodeResolve({
+      browser: true, // Rollup defaults to resolving Node.js-specific modules, which often include imports for core modules like fs, path, or stream—none of which are available in browsers.
+      preferBuiltins: false, // This ensures Rollup doesn't automatically attempt to use Node.js core modules
+    }), // This plugin allows Rollup to resolve external dependencies, specifically those in node_modules, so that it can bundle them properly.
     commonjs({
       extensions: [".js", ".jsx", ".ts", ".tsx"],
       include: /node_modules/,

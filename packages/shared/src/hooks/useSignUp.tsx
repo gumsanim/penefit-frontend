@@ -7,6 +7,8 @@ const useSignUp = () => {
   const [address, setAddress] = useState("");
   const [gender, setGender] = useState("");
   const [petName, setPetName] = useState("");
+
+  return {};
 };
 
 export default useSignUp;
