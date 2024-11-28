@@ -7,14 +7,11 @@ export default function Home() {
   const { idTypeHandler, passwordTypeHandler } = useSignIn();
 
   return (
-    <div>
-      <div>{MESSAGE.ID}</div>
-      <label htmlFor="id">아이디</label>
-      <input name="id" onChange={idTypeHandler} />
-      <label htmlFor="password">비밀번호</label>
-      <input name="password" onChange={passwordTypeHandler} />
-      <Button>하이</Button>
-      <Input />
+    <div className="text-3xl font-bold underline">
+      <div>hi</div>
+      <div>
+        <Input />
+      </div>
     </div>
   );
 }
