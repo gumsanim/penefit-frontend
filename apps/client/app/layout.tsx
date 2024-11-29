@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "@repo/styles";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,14 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        style={{
-          padding: 0,
-          margin: 0,
-        }}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,17 +1,15 @@
 "use client";
 import React from "react";
 import { Button, Input } from "@repo/components";
-import { useSignIn, useSignUp, useValidation, MESSAGE } from "@repo/shared";
+import { useSignIn } from "@repo/shared";
 
 export default function Home() {
-  const { idTypeHandler, passwordTypeHandler } = useSignIn();
+  const { id, password, idTypeHandler, passwordTypeHandler } = useSignIn();
 
   return (
-    <div className="text-3xl font-bold underline">
-      <div>hi</div>
-      <div>
-        <Input />
-      </div>
+    <div>
+      <Input value={id} onChange={idTypeHandler} />
+      <Input value={password} onChange={passwordTypeHandler} />
     </div>
   );
 }
