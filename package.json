@@ -14,7 +14,10 @@
     "styles": "pnpm --filter styles"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
     "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.15",
     "turbo": "^2.2.3",
     "typescript": "5.5.4"
   },

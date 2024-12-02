@@ -7,7 +7,8 @@ export default function Home() {
   const { id, password, idTypeHandler, passwordTypeHandler } = useSignIn();
 
   return (
-    <div>
+    <div className="bg-gray-200">
+      <div className="text-3xl font-bold underline">Hello world!</div>
       <Input value={id} onChange={idTypeHandler} />
       <Input value={password} onChange={passwordTypeHandler} />
     </div>
