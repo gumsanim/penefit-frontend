@@ -1,5 +1,7 @@
 import type { ButtonProps } from "./button.types";
 
-const Button = ({ children }: ButtonProps) => <button>{children}</button>;
+const Button = ({ children, ...props }: ButtonProps) => (
+  <button {...props}>{children}</button>
+);
 
 export default Button;

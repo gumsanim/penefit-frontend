@@ -1,5 +1,5 @@
 import type { InputProps } from "./input.types";
 
-const Input = ({ type }: InputProps) => <input type={type}></input>;
+const Input = ({ ...props }: InputProps) => <input {...props}></input>;
 
 export default Input;

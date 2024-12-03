@@ -15,6 +15,9 @@ const webpackConfig: Configuration[] = [
       alias: {
         "@button": resolver("./src/button"),
         "@input": resolver("./src/input"),
+        "@wrapper": resolver("./src/wrapper"),
+        "@header": resolver("./src/header"),
+        "@icons": resolver("./src/icons"),
       },
     },
     entry: "./src/index.ts",
@@ -31,6 +34,10 @@ const webpackConfig: Configuration[] = [
           use: ["babel-loader"],
           exclude: /node_modules/,
         },
+        {
+          test: /\.svg$/,
+          use: ["@svgr/webpack"],
+        },
       ],
     },
     plugins: [
@@ -46,6 +53,9 @@ const webpackConfig: Configuration[] = [
       alias: {
         "@button": resolver("./src/button"),
         "@input": resolver("./src/input"),
+        "@wrapper": resolver("./src/wrapper"),
+        "@header": resolver("./src/header"),
+        "@icons": resolver("./src/icons"),
       },
     },
     entry: "./src/index.ts",
@@ -67,6 +77,10 @@ const webpackConfig: Configuration[] = [
           test: /\.(ts|tsx|js|jsx)$/,
           use: ["babel-loader"],
           exclude: /node_modules/,
+        },
+        {
+          test: /\.svg$/,
+          use: ["@svgr/webpack"],
         },
       ],
     },

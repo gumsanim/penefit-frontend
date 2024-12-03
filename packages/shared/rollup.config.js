@@ -26,7 +26,6 @@ const rollupConfig = {
     {
       file: packageJson.exports["."].import.default,
       format: "es",
-
       sourcemap: true,
     },
   ],

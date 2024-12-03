@@ -1,16 +1,13 @@
-"use client";
 import React from "react";
-import { Button, Input } from "@repo/components";
-import { useSignIn } from "@repo/shared";
+import { Header, Input, Wrapper } from "@repo/components";
 
 export default function Home() {
-  const { id, password, idTypeHandler, passwordTypeHandler } = useSignIn();
-
   return (
-    <div className="bg-gray-200">
-      <div className="text-3xl font-bold underline">Hello world!</div>
-      <Input value={id} onChange={idTypeHandler} />
-      <Input value={password} onChange={passwordTypeHandler} />
-    </div>
+    <>
+      <Header></Header>
+      <Wrapper className="xy_center">
+        <div>wrapper</div>
+      </Wrapper>
+    </>
   );
 }
