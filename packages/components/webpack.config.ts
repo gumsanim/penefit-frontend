@@ -3,8 +3,21 @@ import "webpack-dev-server";
 import webpack, { Configuration } from "webpack";
 import path from "path";
 import RefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import packageJson from "./package.json";
 
 const resolver = (_path: string) => path.resolve(__dirname, _path);
+
+const generateExternalsFromPeerDependencies = (
+  peerDependencies: Record<string, string>,
+) => {
+  const externals: Record<string, string> = {};
+
+  Object.keys(peerDependencies).forEach((dependency) => {
+    externals[dependency] = dependency; // Map the dependency to itself
+  });
+
+  return externals;
+};
 
 const webpackConfig: Configuration[] = [
   {
@@ -13,11 +26,13 @@ const webpackConfig: Configuration[] = [
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"],
       alias: {
+        "@assets": resolver("./assets"),
         "@button": resolver("./src/button"),
         "@input": resolver("./src/input"),
         "@wrapper": resolver("./src/wrapper"),
         "@header": resolver("./src/header"),
         "@icons": resolver("./src/icons"),
+        "@banner": resolver("./src/banner"),
       },
     },
     entry: "./src/index.ts",
@@ -36,7 +51,11 @@ const webpackConfig: Configuration[] = [
         },
         {
           test: /\.svg$/,
-          use: ["@svgr/webpack"],
+          use: ["svg-react-loader"],
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          type: "asset/resource", // use Webpack 5's built-in asset modules
         },
       ],
     },
@@ -44,18 +63,24 @@ const webpackConfig: Configuration[] = [
       new webpack.HotModuleReplacementPlugin(), // hot module reload
       new RefreshWebpackPlugin(),
     ],
+    externals: generateExternalsFromPeerDependencies(
+      packageJson.peerDependencies,
+    ),
   },
   {
     name: "esm",
     mode: "development",
+
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"],
       alias: {
+        "@assets": resolver("./assets"),
         "@button": resolver("./src/button"),
         "@input": resolver("./src/input"),
         "@wrapper": resolver("./src/wrapper"),
         "@header": resolver("./src/header"),
         "@icons": resolver("./src/icons"),
+        "@banner": resolver("./src/banner"),
       },
     },
     entry: "./src/index.ts",
@@ -71,6 +96,7 @@ const webpackConfig: Configuration[] = [
     experiments: {
       outputModule: true,
     },
+
     module: {
       rules: [
         {
@@ -80,7 +106,11 @@ const webpackConfig: Configuration[] = [
         },
         {
           test: /\.svg$/,
-          use: ["@svgr/webpack"],
+          use: ["svg-react-loader"],
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          type: "asset/resource", // use Webpack 5's built-in asset modules
         },
       ],
     },
@@ -89,6 +119,9 @@ const webpackConfig: Configuration[] = [
       new RefreshWebpackPlugin(),
       new webpack.ProvidePlugin({ React: "react" }),
     ],
+    externals: generateExternalsFromPeerDependencies(
+      packageJson.peerDependencies,
+    ),
   },
 ];
 

@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { Header, Input, Wrapper } from "@repo/components";
+import { Input, Wrapper, Header } from "@repo/components";
 
 export default function Home() {
   return (

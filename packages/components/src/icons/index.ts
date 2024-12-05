@@ -1,2 +1,2 @@
-export { ReactComponent as Lens } from "@assets/lens.svg";
-export { ReactComponent as Cart } from "@assets/cart.svg";
+export { default as Lens } from "@assets/lens.svg";
+export { default as Cart } from "@assets/cart.svg";
