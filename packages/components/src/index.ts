@@ -2,7 +2,7 @@ export { Button } from "@button";
 export { Input } from "@input";
 export { Wrapper } from "@wrapper";
 export { Header } from "@header";
-export { Cart, Lens } from "@icons";
+export { Lens, Cart } from "@icons";
 export { Banner } from "@banner";
 
 export type { ButtonProps } from "@button";

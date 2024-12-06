@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
-import { Input, Wrapper, Header } from "@repo/components";
+import { Header, Input, Wrapper } from "@repo/components";
+import { Lens } from "@repo/components";
 
 export default function Home() {
+  console.log(Lens);
   return (
     <>
+      {/* <Lens /> */}
       <Header></Header>
       <Wrapper className="xy_center">
         <div>wrapper</div>

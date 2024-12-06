@@ -7,7 +7,8 @@
     "baseUrl": ".",
     // Custom module paths to allow imports like `@button` instead of relative paths.
     "paths": {
-      "@assets": ["assets"],
+      "@png": ["assets/png"],
+      "@svg": ["assets/svg"],
       "@button": ["src/button"],
       "@input": ["src/input"],
       "@wrapper": ["src/wrapper"],

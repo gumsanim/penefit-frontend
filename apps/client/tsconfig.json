@@ -7,9 +7,7 @@
       }
     ],
     "baseUrl": ".",
-    "paths": {
-      "@shared/*": ["../shared/src/*"]
-    }
+    "paths": {}
   },
   "include": [
     "next-env.d.ts",

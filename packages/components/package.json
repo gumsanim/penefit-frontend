@@ -20,7 +20,10 @@
   "keywords": [],
   "author": "penefit",
   "license": "ISC",
+<<<<<<< HEAD
   "dependencies": {},
+=======
+>>>>>>> 23b7123 (svg 테스트)
   "devDependencies": {
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
@@ -35,6 +38,8 @@
     "babel-loader": "^9.2.1",
     "core-js": "^3.39.0",
     "html-webpack-plugin": "^5.6.3",
+    "react-svg-loader": "^3.0.3",
+    "svg-react-loader": "^0.4.6",
     "ts-node": "^10.9.2",
     "webpack": "^5.96.1",
     "webpack-bundle-analyzer": "^4.10.2",
@@ -45,6 +50,6 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "next": "^14"
+    "next": "14.2.6"
   }
 }
