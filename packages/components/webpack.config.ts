@@ -18,8 +18,6 @@ const generateExternalsFromPeerDependencies = (
   return externals;
 };
 
-
-
 const webpackConfig: Configuration[] = [
   {
     name: "commonjs",
@@ -52,18 +50,9 @@ const webpackConfig: Configuration[] = [
           exclude: /node_modules/,
         },
         {
-<<<<<<< HEAD
-          test: /\.svg$/,
-          use: ["svg-react-loader"],
-        },
-        {
-          test: /\.(png|jpe?g|gif|svg)$/i,
-          type: "asset/resource", // use Webpack 5's built-in asset modules
-=======
           test: /\.svg$/i,
           issuer: /\.[jt]sx?$/,
           use: ["@svgr/webpack"],
->>>>>>> 23b7123 (svg 테스트)
         },
         {
           test: /\.(png|jpe?g|gif|svg)$/i,
@@ -86,12 +75,8 @@ const webpackConfig: Configuration[] = [
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"],
       alias: {
-<<<<<<< HEAD
-        "@assets": resolver("./assets"),
-=======
         "@svg": resolver("./assets/svg"),
         "@png": resolver("./assets/png"),
->>>>>>> 23b7123 (svg 테스트)
         "@button": resolver("./src/button"),
         "@input": resolver("./src/input"),
         "@wrapper": resolver("./src/wrapper"),
@@ -122,18 +107,9 @@ const webpackConfig: Configuration[] = [
           exclude: /node_modules/,
         },
         {
-<<<<<<< HEAD
-          test: /\.svg$/,
-          use: ["svg-react-loader"],
-        },
-        {
-          test: /\.(png|jpe?g|gif|svg)$/i,
-          type: "asset/resource", // use Webpack 5's built-in asset modules
-=======
           test: /\.svg$/i,
           issuer: /\.[jt]sx?$/,
           use: ["@svgr/webpack"],
->>>>>>> 23b7123 (svg 테스트)
         },
         {
           test: /\.(png|jpe?g|gif|svg)$/i,
