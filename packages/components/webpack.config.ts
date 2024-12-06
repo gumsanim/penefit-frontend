@@ -55,7 +55,7 @@ const webpackConfig: Configuration[] = [
           use: ["@svgr/webpack"],
         },
         {
-          test: /\.(png|jpe?g|gif|svg)$/i,
+          test: /\.png$/i,
           type: "asset/resource", // use Webpack 5's built-in asset modules
         },
       ],
@@ -71,7 +71,6 @@ const webpackConfig: Configuration[] = [
   {
     name: "esm",
     mode: "development",
-
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"],
       alias: {
@@ -98,7 +97,6 @@ const webpackConfig: Configuration[] = [
     experiments: {
       outputModule: true,
     },
-
     module: {
       rules: [
         {
@@ -112,7 +110,7 @@ const webpackConfig: Configuration[] = [
           use: ["@svgr/webpack"],
         },
         {
-          test: /\.(png|jpe?g|gif|svg)$/i,
+          test: /\.png$/i,
           type: "asset/resource", // use Webpack 5's built-in asset modules
         },
       ],
