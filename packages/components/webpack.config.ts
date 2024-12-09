@@ -33,6 +33,7 @@ const webpackConfig: Configuration[] = [
         "@header": resolver("./src/header"),
         "@icons": resolver("./src/icons"),
         "@banner": resolver("./src/banner"),
+        "@row": resolver("./src/row"),
       },
     },
     entry: "./src/index.ts",
@@ -55,8 +56,12 @@ const webpackConfig: Configuration[] = [
           use: ["@svgr/webpack"],
         },
         {
-          test: /\.png$/i,
+          test: /\.(png|jpe?g|gif|svg)$/i,
           type: "asset/resource", // use Webpack 5's built-in asset modules
+        },
+        {
+          test: /\.css$/,
+          use: ["style-loader", "css-loader", "postcss-loader"],
         },
       ],
     },
@@ -82,6 +87,7 @@ const webpackConfig: Configuration[] = [
         "@header": resolver("./src/header"),
         "@icons": resolver("./src/icons"),
         "@banner": resolver("./src/banner"),
+        "@row": resolver("./src/row"),
       },
     },
     entry: "./src/index.ts",
@@ -97,6 +103,7 @@ const webpackConfig: Configuration[] = [
     experiments: {
       outputModule: true,
     },
+
     module: {
       rules: [
         {
@@ -112,6 +119,10 @@ const webpackConfig: Configuration[] = [
         {
           test: /\.png$/i,
           type: "asset/resource", // use Webpack 5's built-in asset modules
+        },
+        {
+          test: /\.css$/,
+          use: ["style-loader", "css-loader", "postcss-loader"],
         },
       ],
     },

@@ -7,5 +7,27 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".xy_center": {
+          display: "flex",
+          "justify-content": "center",
+          "align-items": "center",
+        },
+        ".x_center": {
+          display: "flex",
+          "justify-content": "center",
+        },
+        ".y_center": {
+          display: "flex",
+          "align-items": "center",
+        },
+        ".space_between": {
+          display: "flex",
+          "justify-content": "space-between",
+        },
+      });
+    },
+  ],
 };

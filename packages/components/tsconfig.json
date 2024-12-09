@@ -14,7 +14,8 @@
       "@wrapper": ["src/wrapper"],
       "@icons": ["src/icons"],
       "@header": ["src/header"],
-      "@banner": ["src/banner"]
+      "@banner": ["src/banner"],
+      "@row": ["src/row"]
     },
     // Sets module format to ESNext, targeting modern environments with ES module support.
     "module": "ESNext",
@@ -53,7 +54,9 @@
     "babel.config.js",
     "tailwind.config.js",
     "postcss.config.js",
-    "types/**/*.d.ts"
+    "types/**/*.d.ts",
+    "tailwind.config.js",
+    "postcss.config.js"
   ],
   "exclude": [
     // Excludes external dependencies to avoid unnecessary processing.

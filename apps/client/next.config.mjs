@@ -7,6 +7,7 @@ const nextConfig = {
     externalDir: true, // Allows Next.js to process files outside the app's root
     turbo: {},
   },
+  transpilePackages: ["@repo/components", "@repo/styles"],
   webpack: (config) => {
     if (config.module?.rules) {
       config.module = config.module || {};
@@ -27,7 +28,6 @@ const nextConfig = {
 
     return config;
   },
-  transpilePackages: ["@repo/components"],
 };
 
 export default nextConfig;
