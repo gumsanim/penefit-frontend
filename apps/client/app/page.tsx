@@ -1,5 +1,5 @@
 import React from "react";
-import { Banner, Header, Input, Wrapper, Row } from "@repo/components";
+import { Banner, Header, Input, Wrapper, Row, Typo } from "@repo/components";
 import { Lens } from "@repo/components";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Banner />
       <Header></Header>
       <Banner />
-      <Wrapper className="xy_center">
+      <Wrapper>
         <div>wrapper</div>
       </Wrapper>
       <Row>
@@ -25,6 +25,7 @@ export default function Home() {
           <Row.Item>아아아아</Row.Item>
         </Row.Box>
       </Row>
+      <Typo className="body2">타이포</Typo>
     </>
   );
 }

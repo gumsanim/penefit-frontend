@@ -1,8 +1,7 @@
 import { ImgHTMLAttributes } from "react";
 
 interface BannerProps extends ImgHTMLAttributes<HTMLImageElement> {
-  width: number | string;
-  height: number | string;
+  children: React.ReactNode;
 }
 
 export type { BannerProps };

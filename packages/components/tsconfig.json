@@ -15,7 +15,8 @@
       "@icons": ["src/icons"],
       "@header": ["src/header"],
       "@banner": ["src/banner"],
-      "@row": ["src/row"]
+      "@row": ["src/row"],
+      "@typo": ["src/typo"]
     },
     // Sets module format to ESNext, targeting modern environments with ES module support.
     "module": "ESNext",

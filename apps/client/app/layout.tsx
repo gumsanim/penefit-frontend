@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@repo/styles";
+import { Banner } from "@repo/components";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,6 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Banner>
+          <div>하이</div>
+        </Banner>
         <div>{children}</div>
       </body>
     </html>

@@ -29,5 +29,19 @@ module.exports = {
         },
       });
     },
+    function ({ addUtilities }) {
+      addUtilities({
+        ".body1": {
+          color: "red",
+        },
+        ".body2": {
+          color: "blue",
+        },
+        ".body3": {},
+        ".heading1": {},
+        ".heading2": {},
+        ".heading3": {},
+      });
+    },
   ],
 };
